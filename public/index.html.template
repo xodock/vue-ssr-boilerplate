@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html {{{ meta.inject().htmlAttrs.text() }}}>
+  <head {{{ meta.inject().headAttrs.text() }}}>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    {{{ meta.inject().title.text() }}}
+    {{{ meta.inject().meta.text() }}}
+    {{{ meta.inject().link.text() }}}
+    {{{ meta.inject().style.text() }}}
+    {{{ meta.inject().script.text() }}}
+    {{{ meta.inject().noscript.text() }}}
+    {{{ renderResourceHints() }}}
+    {{{ renderStyles() }}}
+  </head>
+  <body {{{ meta.inject().bodyAttrs.text() }}}>
+    <!--vue-ssr-outlet-->
+    {{{ renderState() }}}
+    {{{ renderScripts() }}}
+  </body>
+</html>

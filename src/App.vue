@@ -7,7 +7,19 @@
     <RouterView/>
   </div>
 </template>
-
+<script>
+export default {
+  metaInfo: {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: 'Bordodel',
+    // all titles will be injected into this template
+    titleTemplate: '%s | Bordodel',
+    htmlAttrs: {
+      lang: 'en',
+    },
+  },
+};
+</script>
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

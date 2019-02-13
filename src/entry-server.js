@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createApp } from './main';
 
 export default context => new Promise(async (resolve, reject) => {
@@ -6,18 +7,16 @@ export default context => new Promise(async (resolve, reject) => {
     router,
     store,
   } = await createApp();
-
+  const meta = app.$meta();
   router.push(context.url);
-
+  context.meta = meta;
   router.onReady(() => {
-    /* eslint-disable no-param-reassign */
     context.rendered = () => {
       // After all preFetch hooks are resolved, our store is now
       // filled with the state needed to render the app.
       // When we attach the state to the context, and the `template` option
       // is used for the renderer, the state will automatically be
       // serialized and injected into the HTML as `window.__INITIAL_STATE__`.
-      /* eslint-disable no-param-reassign */
       context.state = store.state;
     };
     resolve(app);

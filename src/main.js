@@ -1,9 +1,11 @@
 /* eslint-disable import/prefer-default-export */
 import Vue from 'vue';
+import Meta from 'vue-meta';
 import App from './App.vue';
 import { createRouter } from './router';
 import { createStore } from './store';
 
+Vue.use(Meta);
 Vue.config.productionTip = false;
 
 export async function createApp({
